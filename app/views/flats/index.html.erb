@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <% @flats.each do |flat| %>
+      <div class="col-xs-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= flat.url %>);">
+          <div class="card-category"><%= flat.price_per_night %> €</div>
+            <div class="card-description">
+              <h2><%= flat.name %></h2>
+              <p><%= flat.description %></p>
+            </div>
+          <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/random">
+          <div class="card-capacity text-center">
+            <i class="fas fa-users"></i>
+            <p><%= flat.number_of_guests %></p>
+          </div>
+          <div class="pets-allowed">
+            <% if flat.pets_allowed == true %>
+              <i class="fas fa-paw"></i>
+            <% end %>
+          </div>
+          <a class="card-link" href="/flats/<%= flat.id %>" ></a>
+        </div>
+    </div>
+        <% end %>
+    </div>
+  </div>
+
+
